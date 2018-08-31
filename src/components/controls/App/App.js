@@ -1,13 +1,15 @@
-import React, { Component } from 'react'
-import './style.scss'
+import React, {PureComponent} from 'react';
 
-class App extends Component {
+import Main from '../Main';
+import './style.scss';
+
+class App extends PureComponent {
   render() {
     return (
       <div>
-        {this.props.children}
+        <Main/>
       </div>
     )
   }
 }
-export default App
+export default App;

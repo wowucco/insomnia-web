@@ -1,5 +1,6 @@
-import React, { PureComponent } from 'react';
+import React, {PureComponent} from 'react';
 import {Provider} from 'react-redux';
+
 import App from './components/controls/App';
 import {configureStore} from './redux/store';
 
