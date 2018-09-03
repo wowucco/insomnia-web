@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'insomnia-icon';
+    src: url("insomnia.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
