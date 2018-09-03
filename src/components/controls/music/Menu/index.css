@@ -1,4 +1,4 @@
-.pr-menu {
+#playrock-toggle-btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,21 +6,50 @@
     border-radius: 50%;
     cursor: pointer;
 }
-.pr-menu:hover {
+#playrock-toggle-btn:hover {
     background-color: #f1f1f1;
     -webkit-transition: background-color 700ms linear;
     -ms-transition: background-color 700ms linear;
     transition: background-color 700ms linear;
 }
-.pr-menu:active {
+#playrock-toggle-btn:active {
     background-color: #f1f1f1;
     transform: translateX(1px);
     transform: translateY(1px);
 }
-.pr-menu:after {
+#playrock-toggle-btn:after {
     font-family: insomnia-icon;
     font-size: 26px;
     font-weight: 500;
     content: "\e98f";
     color: #8e8e8e;
+}
+#playrock-toggle-menu {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    width: 25%;
+    background-color: #fafafa;
+    z-index: 9999;
+    box-shadow: -1px 0 #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#playrock-toggle-menu > div {
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5b5b5b;
+}
+#playrock-toggle-menu > a {
+    padding: 3px 0;
+    text-decoration: none;
+    color: #8e8e8e;
+}
+#playrock-toggle-menu > a:hover {
+    transform: translateX(4px);
+    color: #5b5b5b;
 }
