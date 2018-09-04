@@ -5,14 +5,15 @@ import React from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 import Home from '../../screens/Home';
-import Playrock from '../../screens/music/Home';
+//import Playrock from '../../screens/music/Home';
+import Music from '../music/Music';
 import NotFound from '../../screens/NotFound';
 
 const Main = () => (
   <Router>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/music" component={Playrock} />
+        <Route path="/music" component={Music} />
         <Route component={NotFound} />
       </Switch>
   </Router>

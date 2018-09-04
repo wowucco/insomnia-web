@@ -32,7 +32,7 @@ class Menu extends Component {
             <Logo/>
           </div>
           <div className="playrock-menu-body">
-            <Link to="/music/test" onClick={this.handleMenuOpen}>Charts</Link>
+            <Link to="/music/chart" onClick={this.handleMenuOpen}>Charts</Link>
             <Link to="/music" onClick={this.handleMenuOpen}>Music</Link>
           </div>
         </div>
