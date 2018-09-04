@@ -1,0 +1,10 @@
+.playrock-artists-list {
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 8px 16px 50px 0 rgba(4,8,80,.14);
+}
+.item {
+    width: 100px;
+    height: 200px;
+
+}

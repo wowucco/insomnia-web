@@ -18,7 +18,7 @@ class Chart extends Component {
   render() {
     const {artists, tracks} = this.props;
     return (
-      <div>
+      <div id="chart-page">
         <ArtistsList list={artists} />
       </div>
     )

@@ -64,7 +64,7 @@ const initialState = {
   charts: {
     artists: {
       artists: [],
-      isFetching: false
+      isFetching: true
     },
     tracks: {
       tracks: [],
