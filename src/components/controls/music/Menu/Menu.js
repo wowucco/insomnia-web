@@ -3,26 +3,40 @@
  */
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import classNames from 'classnames';
 
 import './index.css';
+import BurgerButton from "../../BurgerButton/BurgerButton";
+import Logo from "../Logo/Logo";
 
 
 class Menu extends Component {
+  constructor(props) {
+    super(props);
+    this.handleMenuOpen = this.handleMenuOpen.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  handleMenuOpen() {
+    this.setState({isOpen: !this.state.isOpen});
+  }
+
   render() {
     return (
       <div>
-        <div id="playrock-toggle-btn"></div>
-        <div id="playrock-toggle-menu">
-          <div>IMG</div>
-          <Link to="/music/test">Charts</Link>
-          <Link to="">Charts</Link>
-          <Link to="">Charts</Link>
-          <Link to="">Charts</Link>
-          <Link to="">Charts</Link>
-
+        <BurgerButton onClick={this.handleMenuOpen}/>
+        <div id="playrock-menu" className={classNames(this.state.isOpen ? 'open' : 'hidden')} >
+          <div className="playrock-menu-header">
+            <BurgerButton onClick={this.handleMenuOpen}/>
+            <Logo/>
+          </div>
+          <div className="playrock-menu-body">
+            <Link to="/music/test" onClick={this.handleMenuOpen}>Charts</Link>
+            <Link to="/music" onClick={this.handleMenuOpen}>Music</Link>
+          </div>
         </div>
       </div>
-
     )
   }
 }

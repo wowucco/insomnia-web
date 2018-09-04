@@ -1,0 +1,26 @@
+.burger-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.burger-button:hover {
+    background-color: #f1f1f1;
+    -webkit-transition: background-color 700ms linear;
+    -ms-transition: background-color 700ms linear;
+    transition: background-color 700ms linear;
+}
+.burger-button:active {
+    background-color: #f1f1f1;
+    transform: translateX(1px);
+    transform: translateY(1px);
+}
+.burger-button:after {
+    font-family: insomnia-icon;
+    font-size: 26px;
+    font-weight: 500;
+    content: "\e98f";
+    color: #8e8e8e;
+}

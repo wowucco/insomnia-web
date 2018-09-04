@@ -1,55 +1,34 @@
-#playrock-toggle-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 7px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-#playrock-toggle-btn:hover {
-    background-color: #f1f1f1;
-    -webkit-transition: background-color 700ms linear;
-    -ms-transition: background-color 700ms linear;
-    transition: background-color 700ms linear;
-}
-#playrock-toggle-btn:active {
-    background-color: #f1f1f1;
-    transform: translateX(1px);
-    transform: translateY(1px);
-}
-#playrock-toggle-btn:after {
-    font-family: insomnia-icon;
-    font-size: 26px;
-    font-weight: 500;
-    content: "\e98f";
-    color: #8e8e8e;
-}
-#playrock-toggle-menu {
+#playrock-menu {
     position: absolute;
     height: 100%;
     top: 0;
-    right: 0;
-    width: 25%;
+    left: 0;
+    width: 20%;
     background-color: #fafafa;
     z-index: 9999;
-    box-shadow: -1px 0 #f1f1f1;
+    box-shadow: 3px 0 #f1f1f1;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
-#playrock-toggle-menu > div {
-    height: 15%;
+.playrock-menu-header {
+    height: 60px;
+    padding: 0 10%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    color: #5b5b5b;
 }
-#playrock-toggle-menu > a {
+.playrock-menu-body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    align-items: center;
+}
+.playrock-menu-body > a {
     padding: 3px 0;
     text-decoration: none;
+    font-size: 18px;
     color: #8e8e8e;
 }
-#playrock-toggle-menu > a:hover {
+.playrock-menu-body > a:hover {
     transform: translateX(4px);
     color: #5b5b5b;
 }
