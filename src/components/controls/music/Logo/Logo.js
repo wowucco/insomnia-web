@@ -9,7 +9,7 @@ class Logo extends Component {
   render() {
     return (
       <div className="playrock-logo">
-        INSOMNIA
+        LOGO
       </div>
     )
   }

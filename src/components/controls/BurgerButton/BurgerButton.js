@@ -13,7 +13,9 @@ class BurgerButton extends Component {
   }
 
   handleClick() {
-    this.props.onClick();
+    if (this.props.onClick) {
+      this.props.onClick();
+    }
   }
 
   render() {
