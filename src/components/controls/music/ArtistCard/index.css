@@ -1,0 +1,26 @@
+.artist-card {
+    display: flex;
+    padding: 20px;
+}
+.artist-card > .artist-image {
+
+}
+.artist-card > .artist-image > img{
+    border-radius: 250px;
+    max-width: 250px;
+    max-height: 250px;
+    box-shadow: 8px 16px 50px 0 rgba(4,8,80,.14);
+}
+.artist-card > .artist-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+.artist-card > .artist-info > p {
+    margin: 0;
+    padding: 10px 20px;
+    font-size: 24px;
+}
+.artist-card > .artist-info > span {
+
+}

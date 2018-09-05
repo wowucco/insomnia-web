@@ -15,7 +15,7 @@ export function getTopArtists() {
 function fetchTopArtists() {
   return dispatch => {
     dispatch(requestTopArtist());
-    return fetch('http://localhost:8080/chart/top-artists')
+    return fetch('http://localhost:8080/chart/top-artists?page=1&limit=20')
       .then(response => response.json())
       .then(json => dispatch(receiveTopArtists(json)));
   }

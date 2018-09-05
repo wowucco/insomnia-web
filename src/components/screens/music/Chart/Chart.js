@@ -5,10 +5,19 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 import {getTopArtists, getTopTracks} from '../../../../redux/reducers/chart';
+import {getArtistInfo} from '../../../../redux/reducers/artist';
 import './index.css';
 import ArtistsList from "../../../controls/music/ArtistsList/ArtistsList";
 
 class Chart extends Component {
+  constructor(props) {
+    super(props);
+    this.handleArtistInfo = this.handleArtistInfo.bind(this);
+  }
+
+  handleArtistInfo(name) {
+    this.props.dispatch(getArtistInfo(name));
+  }
 
   componentDidMount() {
     this.props.dispatch(getTopArtists());
@@ -16,22 +25,22 @@ class Chart extends Component {
   }
 
   render() {
-    const {artists, tracks} = this.props;
+    const {artists, tracks, artist} = this.props;
     return (
       <div id="chart-page">
-        <ArtistsList list={artists} />
+        <ArtistsList list={artists} artistInfo={this.handleArtistInfo} artist={artist} />
       </div>
     )
   }
 }
 
 function mapStateToProps(state) {
-  const {artists, tracks} = state.chart.charts;
+  const {chart:{charts: {artists, tracks}}, artist} = state;
   return {
     artists: artists,
-    tracks: tracks
+    tracks: tracks,
+    artist: artist
   }
 }
 
 export default connect(mapStateToProps)(Chart);
-//export default Chart;

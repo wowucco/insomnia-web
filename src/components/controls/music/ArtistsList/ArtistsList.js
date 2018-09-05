@@ -6,19 +6,17 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './index.css';
-import Card from "../ArtistSimpleCard";
+import ArtistSimpleCard from "../ArtistSimpleCard";
+import ArtistCard from "../ArtistCard/ArtistCard";
 
 class ArtistsList extends Component {
   render() {
     const {isFetching = true, artists: {artist: list = [], '@attr': attr = {}}} = this.props.list;
-    /*console.log(isFetching);
-    console.log(list);
-    console.log(attr);*/
-
+    const artist = this.props.artist.info ? this.props.artist.info : list[Math.floor(Math.random() * list.length)];
     const settings = {
       dots: false,
-      autoplay: true,
-      autoplaySpeed: 6000,
+      /*autoplay: true,
+      autoplaySpeed: 6000,*/
       speed: 500,
       pauseOnHover: true,
       slidesToShow: 8,
@@ -29,8 +27,7 @@ class ArtistsList extends Component {
           settings: {
             slidesToShow: 6,
             slidesToScroll: 4,
-            infinite: true,
-            dots: true
+            infinite: true
           }
         },
         {
@@ -52,9 +49,10 @@ class ArtistsList extends Component {
 
     return (
       <div className="playrock-artists-list">
+        {JSON.stringify(artist) !== "{}" ? <ArtistCard artist={artist}/> : <div></div>}
         <Slider {...settings}>
-          {list.map((item, index) => {
-            return <Card key={index} info={item}/>
+          {list.map((artist, index) => {
+            return <ArtistSimpleCard key={index} info={artist} onClick={this.props.artistInfo}/>
           })}
         </Slider>
       </div>
