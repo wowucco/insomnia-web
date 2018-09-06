@@ -1,19 +1,22 @@
 /**
  * Created by wowucco on 05.09.18.
  */
-import fetch from 'cross-fetch';
+import {request} from '../utils/request';
 
 const REQUEST_ARTIST_INFO = 'REQUEST_ARTIST_INFO';
 const RECEIVE_ARTIST_INFO = 'RECEIVE_ARTIST_INFO';
+
+const ACTION_ARTIST_INFO = '/artist/info';
 
 export function getArtistInfo(name) {
   return dispatch => dispatch(fetchArtistInfo(name));
 }
 
 function fetchArtistInfo(name) {
+  ;
   return dispatch => {
     dispatch(requestArtistInfo());
-    return fetch(`http://localhost:8080/artist/info?artist=${name}`)
+    return request({path: ACTION_ARTIST_INFO, params: {artist: name}})
       .then(response => response.json())
       .then(json => dispatch(receiveArtistInfo(json)));
   }

@@ -2,11 +2,15 @@
  * Created by wowucco on 30.08.18.
  */
 import fetch from 'cross-fetch';
+import {request} from '../utils/request';
 
 const REQUEST_TOP_ARTISTS = 'REQUEST_TOP_ARTISTS';
 const RECEIVE_TOP_ARTISTS = 'RECEIVE_TOP_ARTISTS';
 const REQUEST_TOP_TRACKS = 'REQUEST_TOP_TRACKS';
 const RECEIVE_TOP_TRACKS = 'RECEIVE_TOP_TRACKS';
+
+const ACTION_CHART_TOP_ARTISTS = '/chart/top-artists';
+const ACTION_CHART_TOP_TRACKS = '/chart/top-tracks';
 
 export function getTopArtists() {
   return dispatch => dispatch(fetchTopArtists());
@@ -15,7 +19,14 @@ export function getTopArtists() {
 function fetchTopArtists() {
   return dispatch => {
     dispatch(requestTopArtist());
-    return fetch('http://localhost:8080/chart/top-artists?page=1&limit=20')
+
+    return request({
+      path: ACTION_CHART_TOP_ARTISTS,
+      params: {
+        page: 1,
+        limit: 20
+      }
+    })
       .then(response => response.json())
       .then(json => dispatch(receiveTopArtists(json)));
   }
@@ -41,7 +52,7 @@ export function getTopTracks() {
 function fetchTopTracks() {
   return dispatch => {
     dispatch(requestTopTracks());
-    return fetch('http://localhost:8080/chart/top-tracks')
+    return request({path: ACTION_CHART_TOP_TRACKS})
       .then(response => response.json())
       .then(json => dispatch(receiveTopTracks(json)));
   }
