@@ -6,7 +6,7 @@ import {Route} from "react-router-dom";
 
 import Home from '../../../screens/music/Home';
 import Chart from '../../../screens/music/Chart';
-import BandInfo from '../../../screens/music/BandInfo';
+import BandInfo from '../../../screens/music/ArtistInfo';
 import './index.css';
 import Header from "../Header";
 

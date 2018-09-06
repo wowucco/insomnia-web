@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 
 import './index.css';
 
-class BandInfo extends Component {
+class ArtistInfo extends Component {
   render() {
     return (
       <div id="artist-page">
@@ -20,4 +20,4 @@ function mapStateToProps(state) {
   return {}
 }
 
-export default connect(mapStateToProps)(BandInfo);
+export default connect(mapStateToProps)(ArtistInfo);
