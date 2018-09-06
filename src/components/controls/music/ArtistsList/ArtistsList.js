@@ -26,8 +26,7 @@ class ArtistsList extends Component {
           breakpoint: 1200,
           settings: {
             slidesToShow: 6,
-            slidesToScroll: 4,
-            infinite: true
+            slidesToScroll: 4
           }
         },
         {

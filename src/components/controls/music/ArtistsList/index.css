@@ -3,8 +3,46 @@
     background-color: #fff;
     box-shadow: 8px 16px 50px 0 rgba(4,8,80,.14);
 }
+.playrock-artists-list .slick-list {
+    padding-bottom: 5px;
+}
+.playrock-artists-list .slick-list > .slick-track > .slick-slide > div {
+    display: flex;
+    justify-content: center;
+}
 .item {
     width: 100px;
     height: 200px;
-
+}
+.slick-prev, .slick-next {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 99;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.04), 0 4px 8px 0 rgba(0,0,0,0.20);
+}
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+    background-color: white;
+}
+.slick-prev {
+    left: -5px;
+}
+.slick-next {
+    right: -5px;
+}
+.slick-prev:before, .slick-next:before {
+    font-size: 28px;
+    color: #5f5f5f;
+    font-family: insomnia-icon;
+}
+.slick-prev:before {
+    content: "\e92f";
+}
+.slick-next:before {
+    content: "\e930";
+}
+.slick-prev:before:hover, .slick-next:before:hover {
+    color: #5b5b5b;
 }

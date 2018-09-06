@@ -23,7 +23,7 @@ class ArtistSimpleCard extends Component {
     return (
       <div className="simple-card" onClick={() => this.handleClick(name)}>
         <img src={url} alt={name}/>
-        {name}
+        <span>{name}</span>
       </div>
     )
   }

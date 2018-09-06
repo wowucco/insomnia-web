@@ -13,7 +13,6 @@ export function getArtistInfo(name) {
 }
 
 function fetchArtistInfo(name) {
-  ;
   return dispatch => {
     dispatch(requestArtistInfo());
     return request({path: ACTION_ARTIST_INFO, params: {artist: name}})
