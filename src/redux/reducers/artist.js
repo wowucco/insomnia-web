@@ -34,7 +34,7 @@ function receiveArtistInfo(json) {
 
 const initialState = {
   artist: {
-    info: {},
+    info: false,
     isFetching: false
   }
 };

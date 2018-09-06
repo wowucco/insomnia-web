@@ -12,8 +12,8 @@ import ArtistCard from "../ArtistCard/ArtistCard";
 class ArtistsList extends Component {
   render() {
     const {isFetching = true, artists: {artist: list = [], '@attr': attr = {}}} = this.props.list;
-    const artist = this.props.artist.info ? this.props.artist.info : list[Math.floor(Math.random() * list.length)];
-    const settings = {
+    const artist =  this.props.artist.info;
+    const sliderSettings = {
       dots: false,
       /*autoplay: true,
       autoplaySpeed: 6000,*/
@@ -49,8 +49,8 @@ class ArtistsList extends Component {
 
     return (
       <div className="playrock-artists-list">
-        {JSON.stringify(artist) !== "{}" ? <ArtistCard artist={artist}/> : <div></div>}
-        <Slider {...settings}>
+        {artist && <ArtistCard artist={artist}/>}
+        <Slider {...sliderSettings}>
           {list.map((artist, index) => {
             return <ArtistSimpleCard key={index} info={artist} onClick={this.props.artistInfo}/>
           })}
