@@ -10,6 +10,10 @@ import ArtistSimpleCard from "../ArtistSimpleCard";
 import ArtistCard from "../ArtistCard/ArtistCard";
 
 class ArtistsList extends Component {
+  componentWillReceiveProps(nextProps) {
+    const {artist: {info, isFetching}, list:{artists: {artist = []}}} = nextProps;
+    {!info && !isFetching && artist.length > 0 && this.props.artistInfo(artist[Math.floor((Math.random() * artist.length))].name)}
+  }
   render() {
     const {isFetching = true, artists: {artist: list = [], '@attr': attr = {}}} = this.props.list;
     const artist =  this.props.artist.info;

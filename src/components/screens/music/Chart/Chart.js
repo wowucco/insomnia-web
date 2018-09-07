@@ -26,13 +26,14 @@ class Chart extends Component {
     this.props.dispatch(getTrackInfo(name));
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.dispatch(getTopArtists());
     this.props.dispatch(getTopTracks());
   }
 
   render() {
     const {artists, tracks, artist, track} = this.props;
+
     return (
       <div id="chart-page">
         <ArtistsList list={artists} artistInfo={this.handleArtistInfo} artist={artist} />

@@ -74,7 +74,7 @@ function receiveTopTracks(json) {
 const initialState = {
   charts: {
     artists: {
-      artists: [],
+      artists: {},
       isFetching: true
     },
     tracks: {
