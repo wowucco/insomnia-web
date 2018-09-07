@@ -22,8 +22,8 @@ class Chart extends Component {
     this.props.dispatch(getArtistInfo(name));
   }
 
-  handleTrackInfo(name) {
-    this.props.dispatch(getTrackInfo(name));
+  handleTrackInfo(artist, track) {
+    this.props.dispatch(getTrackInfo(artist, track));
   }
 
   componentWillMount() {
@@ -37,7 +37,7 @@ class Chart extends Component {
     return (
       <div id="chart-page">
         <ArtistsList list={artists} artistInfo={this.handleArtistInfo} artist={artist} />
-        <TracksList list={tracks} artistInfo={this.handleTrackInfo} track={track} />
+        <TracksList list={tracks} trackInfo={this.handleTrackInfo} track={track} {...this.props}/>
       </div>
     )
   }

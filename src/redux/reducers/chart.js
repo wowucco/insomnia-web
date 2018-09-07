@@ -52,7 +52,13 @@ export function getTopTracks() {
 function fetchTopTracks() {
   return dispatch => {
     dispatch(requestTopTracks());
-    return request({path: ACTION_CHART_TOP_TRACKS})
+    return request({
+      path: ACTION_CHART_TOP_TRACKS,
+      params: {
+        page: 1,
+        limit: 20
+      }
+    })
       .then(response => response.json())
       .then(json => dispatch(receiveTopTracks(json)));
   }

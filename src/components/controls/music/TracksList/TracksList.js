@@ -6,10 +6,27 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './index.css';
-import ArtistSimpleCard from "../ArtistSimpleCard";
-import ArtistCard from "../ArtistCard/ArtistCard";
+import TrackSimpleCard from "../TrackSimpleCard";
+import TrackCard from "../TrackCard";
 
 class TracksList extends Component {
+  constructor(props) {
+    super(props);
+    this.handleTrackInfo = this.handleTrackInfo.bind(this);
+  }
+
+  handleTrackInfo(random) {
+    const {name: track, artist: {name: artist}} = random;
+    if (this.props.trackInfo) {
+      this.props.trackInfo(artist, track);
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const {track: {info, isFetching}, list:{tracks: {track = []}}} = nextProps;
+    {!info && !isFetching && track.length > 0 && this.handleTrackInfo(track[Math.floor((Math.random() * track.length))])}
+  }
+
   render() {
     const {isFetching = true, tracks: {track: list = [], '@attr': attr = {}}} = this.props.list;
     const track =  this.props.track.info;
@@ -48,10 +65,10 @@ class TracksList extends Component {
 
     return (
       <div className="playrock-artists-list">
-        {track && <ArtistCard artist={track}/>}
+        {track && <TrackCard track={track} />}
         <Slider {...sliderSettings}>
-          {list.map((artist, index) => {
-            return <ArtistSimpleCard key={index} info={artist} onClick={this.props.artistInfo}/>
+          {list.map((track, index) => {
+            return <TrackSimpleCard key={index} info={track} onClick={this.props.trackInfo}/>
           })}
         </Slider>
       </div>

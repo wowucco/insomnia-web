@@ -1,19 +1,20 @@
 /**
- * Created by wowucco on 06.09.18.
+ * Created by wowucco on 07.09.18.
  */
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 import './index.css';
 
-class ArtistInfo extends Component {
+class TrackInfo extends Component {
   render() {
-    const {match: {params: {artist}}} = this.props;
+    const {match: {params: {artist, track}}} = this.props;
     console.log(artist);
+    console.log(track);
 
     return (
       <div id="artist-page">
-        Artist info
+        Track info
       </div>
     )
   }
@@ -23,4 +24,4 @@ function mapStateToProps(state) {
   return {}
 }
 
-export default connect(mapStateToProps)(ArtistInfo);
+export default connect(mapStateToProps)(TrackInfo);

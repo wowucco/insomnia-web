@@ -6,7 +6,8 @@ import {Route} from "react-router-dom";
 
 import Home from '../../../screens/music/Home';
 import Chart from '../../../screens/music/Chart';
-import BandInfo from '../../../screens/music/ArtistInfo';
+import ArtistInfo from '../../../screens/music/ArtistInfo';
+import TrackInfo from '../../../screens/music/TrackInfo';
 import './index.css';
 import Header from "../Header";
 
@@ -17,7 +18,8 @@ class Music extends Component {
         <Header/>
         <Route exact path="/music" component={Home}/>
         <Route path="/music/chart" component={Chart}/>
-        <Route path="/music/band/:name" component={BandInfo}/>
+        <Route path="/music/band/:artist" component={ArtistInfo}/>
+        <Route path="/music/track/:artist/:track" component={TrackInfo}/>
       </div>
     )
   }

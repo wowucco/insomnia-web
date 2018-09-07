@@ -21,7 +21,7 @@ class ArtistSimpleCard extends Component {
     const {name, image: [,,,{'#text':url}]} = this.props.info;
 
     return (
-      <div className="simple-card" onClick={() => this.handleClick(name)}>
+      <div className="artist-simple-card" onClick={() => this.handleClick(name)}>
         <img src={url} alt={name}/>
         <span>{name}</span>
       </div>

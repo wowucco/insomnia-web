@@ -1,4 +1,4 @@
-.artist-simple-card {
+.track-simple-card {
     display: flex;
     flex-direction: column;
     width: 95%;
@@ -7,14 +7,14 @@
     box-shadow: 0 0 0 1px rgba(0,0,0,0.04), 0 4px 8px 0 rgba(0,0,0,0.20);
     cursor: pointer;
 }
-.artist-simple-card:hover {
+.track-simple-card:hover {
     transform:  translateY(2px);
 }
-.artist-simple-card > img {
+.track-simple-card > img {
     width: 100%;
     height: 170px;
 }
-.artist-simple-card > span {
+.track-simple-card > span {
     display: flex;
     justify-content: center;
     align-items: center;
