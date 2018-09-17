@@ -7,9 +7,10 @@ import './index.css';
 
 class Logo extends Component {
   render() {
+    const LOGO = 'insomnia';
     return (
       <div className="playrock-logo">
-        LOGO
+        {LOGO.toUpperCase()}
       </div>
     )
   }

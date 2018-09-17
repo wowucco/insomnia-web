@@ -1,0 +1,55 @@
+.tracks-tile {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 5%;
+}
+.tracks-tile > .track {
+    min-width: 50%;
+    display: flex;
+}
+.tracks-tile > .track > div {
+    position: relative;
+    margin: 4px;
+    padding: 2px;
+    width: 100%;
+    min-height: 40px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+}
+.tracks-tile > .track > div:after {
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    font-family: insomnia-icon;
+    font-size: 26px;
+    font-weight: 500;
+    content: "\e97c";
+    color: #5f5f5f;
+}
+.tracks-tile > .track > div:hover {
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,0.04), 0 4px 8px 0 rgba(0,0,0,0.20);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.04), 0 4px 8px 0 rgba(0,0,0,0.20);
+}
+.tracks-tile > .track > div > .play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+}
+.tracks-tile > .track > div > .play:after {
+    position: absolute;
+    font-family: insomnia-icon;
+    font-size: 26px;
+    font-weight: 500;
+    content: "\ea05";
+    color: #fff;
+}
+.tracks-tile > .track > div:hover > .play:hover:after {
+    content: "\eba0";
+}
+.tracks-tile > .track > div > .play > img {
+
+}

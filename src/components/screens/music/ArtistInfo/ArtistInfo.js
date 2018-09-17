@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import {getArtistInfo, getArtistTopAlbums, getArtistTopTracks} from '../../../../redux/reducers/artist';
 import './index.css';
 import SimilarSimpleCard from "../../../controls/music/SimilarSimpleCard/SimilarSimpleCard";
+import TracksTile from "../../../controls/music/TracksTile/TracksTile";
 
 class ArtistInfo extends Component {
 
@@ -46,20 +47,22 @@ class ArtistInfo extends Component {
 
             <div className="artist-info">
 
+              <div className="tags">
+                <div>
+                  {info.tags.tag.map((item, index) => {
+                    return <div key={index}>{item.name}</div>
+                  })}
+                </div>
+              </div>
+
               <div className="bio">
                 <h4>Bio</h4>
-                {/*<span>{info.bio.content.replace(/<a[\w+\W+]{2,}<\/a>/gm, '')}</span>*/}
+                <span>{info.bio.content.replace(/<a[\w+\W+]{2,}<\/a>/gm, '')}</span>
               </div>
 
               <div className="similar">
                 {info.similar.artist.map((item, index) => {
                   return <SimilarSimpleCard key={index} name={item.name} image={item.image[2]['#text']}/>
-                })}
-              </div>
-
-              <div className="tags">
-                {info.tags.tag.map((item, index) => {
-                  return <div key={index}>{item.name}</div>
                 })}
               </div>
 
@@ -71,13 +74,9 @@ class ArtistInfo extends Component {
                   <span>Loading</span>
               }
 
-              {
-                !topTracks.isFetching && topTracks.list ?
-                  <div className="top-tracks">
-                    top-tracks
-                  </div> :
-                  <span>Loading</span>
-              }
+              <div className="top-tracks">
+                <TracksTile topTracks={topTracks}/>
+              </div>
 
 
             </div>

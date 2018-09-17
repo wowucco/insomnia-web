@@ -8,6 +8,7 @@
     display: flex;
     position: relative;
     align-items: flex-end;
+    border-bottom: 1px solid #d5d5d5;
 }
 #artist-page header > img {
     position: absolute;
@@ -21,9 +22,26 @@
     margin-left: 450px;
 }
 #artist-page .artist-info {
-    padding: 80px 2% 0;
+    padding: 0 2% 0;
 }
-#artist-page .artist-info .similar, #artist-page .artist-info .tags {
+#artist-page .artist-info .tags {
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+#artist-page .artist-info .tags > div {
+    width: 550px;
+    display: flex;
+    justify-content: space-around;
+}
+#artist-page .artist-info .tags > div > div {
+    border: 1px solid #a5a5a5;
+    padding: 2px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#artist-page .artist-info .similar {
     padding: 20px 0;
     width: 100%;
     display: flex;
