@@ -9,7 +9,6 @@ import './index.css';
 import BurgerButton from "../../BurgerButton/BurgerButton";
 import Logo from "../Logo/Logo";
 
-
 class Menu extends Component {
   constructor(props) {
     super(props);
