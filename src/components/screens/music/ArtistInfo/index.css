@@ -41,7 +41,17 @@
     border-radius: 5px;
     cursor: pointer;
 }
-#artist-page .artist-info .similar {
+#artist-page .artist-info .similar, #artist-page .artist-info .top-tracks, #artist-page .artist-info .top-albums {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+#artist-page .artist-info .similar > p, #artist-page .artist-info .top-tracks > p, #artist-page .artist-info .top-albums > p {
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+}
+#artist-page .artist-info .similar > div {
     padding: 20px 0;
     width: 100%;
     display: flex;

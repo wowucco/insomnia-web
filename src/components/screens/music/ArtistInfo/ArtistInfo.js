@@ -8,6 +8,7 @@ import {getArtistInfo, getArtistTopAlbums, getArtistTopTracks} from '../../../..
 import './index.css';
 import SimilarSimpleCard from "../../../controls/music/SimilarSimpleCard/SimilarSimpleCard";
 import TracksTile from "../../../controls/music/TracksTile/TracksTile";
+import AlbumsTile from "../../../controls/music/AlbumsTile/AlbumsTile";
 
 class ArtistInfo extends Component {
 
@@ -61,20 +62,21 @@ class ArtistInfo extends Component {
               </div>
 
               <div className="similar">
-                {info.similar.artist.map((item, index) => {
-                  return <SimilarSimpleCard key={index} name={item.name} image={item.image[2]['#text']}/>
-                })}
+                <p>Similar</p>
+                <div>
+                  {info.similar.artist.map((item, index) => {
+                    return <SimilarSimpleCard key={index} name={item.name} image={item.image[2]['#text']}/>
+                  })}
+                </div>
               </div>
 
-              {
-                !topAlbums.isFetching && topAlbums.list ?
-                  <div className="top-albums">
-                    top-albums
-                  </div> :
-                  <span>Loading</span>
-              }
+              <div className="top-albums">
+                <p>Top albums</p>
+                <AlbumsTile topAlbums={topAlbums}/>
+              </div>
 
               <div className="top-tracks">
+                <p>Top tracks</p>
                 <TracksTile topTracks={topTracks}/>
               </div>
 

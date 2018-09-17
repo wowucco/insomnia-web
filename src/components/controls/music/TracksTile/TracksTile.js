@@ -8,8 +8,6 @@ import './index.css';
 class TracksTile extends Component {
   render() {
     const {isFetching, list} = this.props.topTracks;
-    console.log(isFetching);
-    console.log(list);
     return (
       <div className="tracks-tile">
         {
