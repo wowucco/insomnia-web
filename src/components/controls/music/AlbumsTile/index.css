@@ -1,0 +1,64 @@
+.albums-tile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.albums-tile > .album {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+.albums-tile > .album > div {
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,0.04), 0 4px 8px 0 rgba(0,0,0,0.20);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.04), 0 4px 8px 0 rgba(0,0,0,0.20);
+    min-width: 250px;
+}
+.albums-tile > .album:hover > div {
+    -webkit-transform: translateY(2px);
+    -ms-transform: translateY(2px);
+    transform: translateY(2px);
+}
+.albums-tile > .album > div > .image {
+    padding: 4px;
+    position: relative;
+}
+.albums-tile > .album > div > .image > .ctrl-btn {
+    position: absolute;
+    padding: 10px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.albums-tile > .album > div > .image > .ctrl-btn > span:after {
+    font-family: insomnia-icon;
+    font-size: 26px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    padding: 4px;
+}
+.albums-tile > .album > div > .image > .ctrl-btn > span:hover {
+    -webkit-transform: translateY(2px);
+    -ms-transform: translateY(2px);
+    transform: translateY(2px);
+}
+.albums-tile > .album > div > .image > .ctrl-btn > .play:after {
+    content: "\ea05";
+}
+.albums-tile > .album > div > .image > .ctrl-btn > .play:hover:after {
+    content: "\eba0";
+}
+.albums-tile > .album > div > .image > .ctrl-btn > .info:after {
+    content: "\e97c";
+}
+.albums-tile > .album > div > .image > .ctrl-btn > .info:hover:after {}
+.albums-tile > .album > div > .image > img {
+    width: 100%;
+}

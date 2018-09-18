@@ -15,8 +15,16 @@ class AlbumsTile extends Component {
             ? list.map((item, index) =>
             <div className="album" key={index}>
               <div>
-                <img src={item.image[2]['#text']} alt={item.name}/>
-                {item.name}
+                <div className="image">
+                  <img src={item.image[2]['#text']} alt={item.name}/>
+                  <div className="ctrl-btn">
+                    <span className="play"></span>
+                    <span className="info"></span>
+                  </div>
+                </div>
+                <div className="info">
+                  {item.name}
+                </div>
               </div>
             </div>
           )

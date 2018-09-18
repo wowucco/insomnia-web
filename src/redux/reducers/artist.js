@@ -47,7 +47,14 @@ export function getArtistTopAlbums(name) {
 function fetchArtistTopAlbums(name) {
   return dispatch => {
     dispatch(requestArtistTopAlbums());
-    return request({path: ACTION_ARTIST_TOP_ALBUMS, params: {artist: name}})
+    return request({
+      path: ACTION_ARTIST_TOP_ALBUMS,
+      params: {
+        artist: name,
+        page: 1,
+        limit: 15
+      }
+    })
       .then(response => response.json())
       .then(json => dispatch(receiveArtistTopAlbums(json)));
   }
@@ -73,7 +80,14 @@ export function getArtistTopTracks(name) {
 function fetchArtistTopTracks(name) {
   return dispatch => {
     dispatch(requestArtistTopTracks());
-    return request({path: ACTION_ARTIST_TOP_TRACKS, params: {artist: name}})
+    return request({
+      path: ACTION_ARTIST_TOP_TRACKS,
+      params: {
+        artist: name,
+        page: 1,
+        limit: 10
+      }
+    })
       .then(response => response.json())
       .then(json => dispatch(receiveArtistTopTracks(json)));
   }
