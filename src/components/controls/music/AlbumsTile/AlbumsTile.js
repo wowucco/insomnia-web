@@ -2,6 +2,7 @@
  * Created by wowucco on 17.09.18.
  */
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 import './index.css';
 
@@ -19,7 +20,7 @@ class AlbumsTile extends Component {
                   <img src={item.image[2]['#text']} alt={item.name}/>
                   <div className="ctrl-btn">
                     <span className="play"></span>
-                    <span className="info"></span>
+                    <Link to={`/music/album/${item.artist.name}/${item.name}`}><span className="info"></span></Link>
                   </div>
                 </div>
                 <div className="info">

@@ -1,0 +1,37 @@
+#album-page {}
+#album-page .general-info {
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    padding: 20px 2%
+}
+#album-page .general-info > .image {
+    display: flex;
+    flex-direction: column;
+}
+#album-page .general-info > .image > .tags {
+    display: flex;
+    align-items: center;
+}
+#album-page .general-info > .image > .tags > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0 0;
+    flex-wrap: wrap;
+}
+#album-page .general-info > .image > .tags > div > div {
+    border: 1px solid #a5a5a5;
+    padding: 2px 5px;
+    margin: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#album-page .general-info > .info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+#album-page .general-info > .info > h4, #album-page .general-info > .info > h5 {
+    margin: 0;
+}

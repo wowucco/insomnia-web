@@ -1,0 +1,40 @@
+.tracks-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 2%;
+    justify-content: center;
+}
+.tracks-list > .track {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 400px;
+    margin: 4px;
+    padding: 15px 10px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,0.04), 0 4px 8px 0 rgba(0,0,0,0.20);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.04), 0 4px 8px 0 rgba(0,0,0,0.20);
+}
+.tracks-list > .track:hover {
+    -webkit-transform: translateY(2px);
+    -ms-transform: translateY(2px);
+    transform: translateY(2px);
+}
+.tracks-list > .track > .navigation {
+    display: flex;
+    align-items: center;
+}
+.tracks-list > .track > .navigation > div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.tracks-list > .track > .navigation > div .info:after {
+    font-family: insomnia-icon;
+    content: "\e97c";
+    font-size: 26px;
+    font-weight: 500;
+    color: #5f5f5f;
+    cursor: pointer;
+    padding: 4px;
+}
